@@ -22,12 +22,7 @@ public abstract class Player {
      * @return either true or false
      */
     public boolean hasLost() {
-        if (monster.getHP() <= 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return monster.getHP() <= 0;
     }
 
     /**
@@ -38,12 +33,7 @@ public abstract class Player {
      * @return either true or false
      */
     public boolean isFasterThan(Player enemy) {
-        if (this.monster.getSpeed() >= enemy.getMonster().getSpeed()) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.monster.getSpeed() >= enemy.getMonster().getSpeed();
     }
 
     /**
@@ -74,11 +64,11 @@ public abstract class Player {
             //Determines if attack is super or not very effective and determines modifier
             //multiplyed by 2 b/c using int later divided by 2
             for(int i=0; i <= 2; i++) {
-                if (this.monster.getMove(m).getType() == weakness[i]) { 
+                if (this.monster.getMove(m).getType().equals(weakness[i])) {
                     isSuperEffective = 4;
                     break;
                 }
-                if (this.monster.getMove(m).getType() == strength[i]) {
+                if (this.monster.getMove(m).getType().equals(strength[i])) {
                     isSuperEffective = 1;
                     break;
                 }
