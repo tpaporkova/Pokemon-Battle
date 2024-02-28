@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'pmd'
 }
 
 repositories {
@@ -7,4 +8,11 @@ repositories {
 }
 
 dependencies {
+}
+
+pmd {
+    toolVersion = '6.39.0'
+	ruleSetFiles = files("pmd.xml")
+	ruleSets = []
+	ignoreFailures = true
 }
