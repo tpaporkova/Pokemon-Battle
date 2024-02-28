@@ -4,9 +4,15 @@
     <exclude-pattern>.*/main/java/.*</exclude-pattern>
     <include-pattern>.*/main/java/Player.java</include-pattern>
     <rule ref="category/java/errorprone.xml">
+        <exclude name="BeanMembersShouldSerialize"/>
     </rule>
     <rule ref="category/java/codestyle.xml">
+        <exclude name="NoPackage"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="MethodArgumentCouldBeFinal"/>
+        <exclude name="AtLeastOneConstructor"/>
     </rule>
     <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/>
     </rule>
 </ruleset>
